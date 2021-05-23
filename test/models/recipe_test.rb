@@ -35,4 +35,12 @@ class RecipeTest < ActiveSupport::TestCase
     @recipe.description = "a" * 501
     assert_not @recipe.valid?
   end
+
+  test "create new valid recipe" do
+    get new_recipe_path
+  end
+  
+  test "reject invalid recipe submissions" do
+    get new_recipe_path
+  end
 end
