@@ -53,10 +53,12 @@ class RecipeTest < ActiveSupport::TestCase
   end
   
   test "reject invalid recipe submissions" do
+    sign_in_as(@chef, "password")
     get new_recipe_path
     assert_template 'recipes/new'
     assert_no_difference 'Recipe.count' do
-      post recipes_path, params: { recipe: { name: " ", description: " " } }
+      post recipes_path, params: { recipe: { name: " ", 
+                                          description: " " } }
     end
     assert_template 'recipes/new'
     assert_select 'h2.panel-title'
