@@ -22,6 +22,7 @@ class RecipesTest < ActionDispatch::IntegrationTest
   end
 
   test "should get recipes show" do
+    sign_in_as(@chef, "password")
     get recipe_path(@recipe)
     assert_template 'recipes/show'
     assert_match @recipe.name, response.body
@@ -30,6 +31,6 @@ class RecipesTest < ActionDispatch::IntegrationTest
     assert_select 'a[href=?]', edit_recipe_path(@recipe), text: "Edit this recipe"
     assert_select 'a[href=?]', recipe_path(@recipe), text: "Delete this recipe"
     assert_select 'a[href=?]', recipes_path, text: "Return to recipes listing"
-  end
+  end  
 
 end
