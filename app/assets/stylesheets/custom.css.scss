@@ -29,6 +29,23 @@ $navbar-default-bg: #073B15;
   font-weight: bold;
 }
 
+.nav.navbar-nav li{
+    color: white;
+    text-decoration: none;
+}
+
+.navbar .navbar-nav > li > a,
+.navbar .navbar-nav > .active > a{
+    color: white;
+}
+
+.navbar .navbar-nav > li > a:hover,
+.navbar .navbar-nav > li > a:focus,
+.navbar .navbar-nav > .active > a:hover,
+.navbar .navbar-nav > .active > a:focus {
+    color: #FF8C00;
+}
+
 #logo {
   float: left;
   font-size: 1.7em;
@@ -121,3 +138,4 @@ footer ul li {
 .input_checkbox input {
   width: auto !important;
 }
+
