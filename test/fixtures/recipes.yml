@@ -1,0 +1,21 @@
+# recipes.yml
+Mainrecipe:
+  id: 101
+  name: How to Make Spicy Chicken Saute
+  description: |+
+               1.Cut the chicken into strips
+               2.Heat oil
+               3.Fry the marinated chicken
+  chef_id: 5
+
+
+<% 10.times do |n| %>
+recipe_<%= n %>:
+  id: <%= n %>
+  name: <%= "Recipe #{n}" %>
+  description: |+
+               1.Cut the chicken into strips
+               2.Heat oil
+               3.Fry the marinated chicken
+  chef_id: <%= n+2 %>
+<% end %>

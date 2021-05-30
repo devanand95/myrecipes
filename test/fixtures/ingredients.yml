@@ -1,0 +1,62 @@
+# recipes.yml
+
+Mainingredient1:
+  id: 1
+  name: Chicken
+
+Mainingredient2:
+  id: 2
+  name: Carrot
+
+Mainingredient3:
+  id: 3
+  name: Raddish
+
+Mainingredient4:
+  id: 4
+  name: Tuna Fish
+
+Mainingredient5:
+  id: 5
+  name: Olive Oil
+
+Mainingredient6:
+  id: 6
+  name: Cheese
+
+Mainingredient7:
+  id: 7
+  name: Pepper
+
+Mainingredient8:
+  id: 8
+  name: Prawns
+
+Mainingredient9:
+  id: 9
+  name: Paneer
+
+Mainingredient10:
+  id: 10
+  name: Mushrooms
+
+Mainingredient11:
+  id: 11
+  name: Babycorn
+
+Mainingredient12:
+  id: 12
+  name: Seasonings
+
+Mainingredient13:
+  id: 13
+  name: Coriander
+
+Mainingredient14:
+  id: 14
+  name: Onion
+
+Mainingredient15:
+  id: 15
+  name: Tomato
+
