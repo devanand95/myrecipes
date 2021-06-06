@@ -4,7 +4,7 @@ class ChefTest < ActiveSupport::TestCase
   
   def setup
     @chef = Chef.new(chefname: "mashrur", email: "mashrur@example.com",
-                     password: "password", password_confirmation: "password")
+                    password: "password", password_confirmation: "password")
   end
   
   test "should be valid" do
@@ -53,30 +53,29 @@ class ChefTest < ActiveSupport::TestCase
     @chef.save
     assert_not duplicate_chef.valid?
   end
-
+  
   test "email should be lower case before hitting db" do
     mixed_email = "JohN@ExampLe.com"
     @chef.email = mixed_email
     @chef.save
     assert_equal mixed_email.downcase, @chef.reload.email 
   end
-
+  
   test "password should be present" do
     @chef.password = @chef.password_confirmation = " "
     assert_not @chef.valid?
   end
-
+  
   test "password should be atleast 5 character" do
     @chef.password = @chef.password_confirmation = "x" * 4
     assert_not @chef.valid?
   end
-
+  
   test "associated recipes should be destroyed" do
     @chef.save
-    @chef.recipes.create!(name: "testing delete", description: "testing delete function")
+    @chef.recipes.create!(name: "testing destroy", description: "testing destroy function")
     assert_difference 'Recipe.count', -1 do
       @chef.destroy
     end
   end
-  
 end

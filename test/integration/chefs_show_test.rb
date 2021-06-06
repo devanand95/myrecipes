@@ -1,16 +1,12 @@
 require 'test_helper'
 
 class ChefsShowTest < ActionDispatch::IntegrationTest
+  
   def setup
-    @chef = Chef.create!(chefname: "mashrur", 
-                        email: "mashrur@example.com",
-                        password: "password", 
-                        password_confirmation: "password")
-    @recipe = Recipe.create(name: "vegetable saute", 
-        description: "great vegetable sautee, add vegetable and oil", 
-        chef: @chef)
-    @recipe2 = @chef.recipes.build(name: "chicken saute", 
-                          description: "great chicken dish")
+    @chef = Chef.create!(chefname: "mashrur", email: "mashrur@example.com",
+                        password: "password", password_confirmation: "password")
+    @recipe = Recipe.create(name: "vegetable saute", description: "great vegetable sautee, add vegetable and oil", chef: @chef)
+    @recipe2 = @chef.recipes.build(name: "chicken saute", description: "great chicken dish")
     @recipe2.save
   end
   
@@ -23,4 +19,7 @@ class ChefsShowTest < ActionDispatch::IntegrationTest
     assert_match @recipe2.description, response.body
     assert_match @chef.chefname, response.body
   end
+  # test "the truth" do
+  #   assert true
+  # end
 end
